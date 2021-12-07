@@ -6,13 +6,12 @@ const weatherfetch = (address) => {
     fetch(`/weather?address=${address}`)
         .then(response => response.json())
         .then((data) => {
-            console.log(data)
             if (data.Error) {
                 messageOne.textContent = data.Error
             }
             else {
                 messageOne.textContent = data.Location
-                messageTwo.textContent = data.forecastData.weather_descriptions;
+                messageTwo.textContent = data.forecastData;
             }
 
         })
@@ -29,5 +28,4 @@ weatherForm.addEventListener('submit', (e) => {
     const location = search.value;
 
     weatherfetch(location)
-    console.log(location)
 })
