@@ -1,10 +1,9 @@
-console.log('Client side Javascript File is loaded')
-fetch('http://puzzle.mead.io/puzzle')
-    .then(response => response.json()).then((data) => {
-        console.log(data)
-    })
+// fetch('http://puzzle.mead.io/puzzle')
+//     .then(response => response.json()).then((data) => {
+//         console.log(data)
+//     })
 const weatherfetch = (address) => {
-    fetch(`http://localhost:3000/weather?address=${address}`)
+    fetch(`/weather?address=${address}`)
         .then(response => response.json())
         .then((data) => {
             console.log(data)
